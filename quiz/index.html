@@ -10,17 +10,18 @@
     }
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #f0f2f5;
+      background-color: #000;
+      color: #fff;
       margin: 0;
       padding: 0;
     }
     .quiz-container {
       max-width: 500px;
       margin: 60px auto;
-      background: #fff;
+      background: #111;
       border-radius: 16px;
       padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     }
     .step {
       display: none;
@@ -35,26 +36,31 @@
     }
     h2 {
       text-align: center;
-      color: #333;
+      color: #e50914;
     }
     .question {
       font-size: 18px;
       margin: 20px 0 10px;
+      color: #fff;
     }
     .options label {
       display: block;
       margin: 12px 0;
-      background: #f7f7f7;
-      padding: 12px;
+      background: #222;
+      padding: 14px;
       border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s;
+      border: 2px solid transparent;
+      transition: background 0.3s, border 0.3s;
+      color: #fff;
     }
     .options input {
       display: none;
     }
-    .options label:hover {
-      background: #e0e0e0;
+    .options input:checked + label {
+      background: #1a1a1a;
+      border: 2px solid #e50914;
+      color: #e50914;
     }
     button {
       margin-top: 20px;
@@ -62,20 +68,30 @@
       padding: 14px;
       border: none;
       border-radius: 10px;
-      background-color: #007bff;
+      background-color: #e50914;
       color: white;
       font-size: 16px;
       cursor: pointer;
       transition: background 0.3s;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #b00610;
     }
     #result {
       text-align: center;
       font-weight: bold;
       margin-top: 20px;
       font-size: 18px;
+      color: #e50914;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background: #1a1a1a;
+      color: #fff;
     }
   </style>
 </head>
@@ -96,8 +112,10 @@
       <div class="step">
         <div class="question">2. ¿Estás en una relación?</div>
         <div class="options">
-          <label><input type="radio" name="relacion" value="si"> Sí</label>
-          <label><input type="radio" name="relacion" value="no"> No</label>
+          <input type="radio" id="relacion_si" name="relacion" value="si">
+          <label for="relacion_si">Sí</label>
+          <input type="radio" id="relacion_no" name="relacion" value="no">
+          <label for="relacion_no">No</label>
         </div>
         <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
@@ -106,10 +124,14 @@
       <div class="step">
         <div class="question">3. ¿Cómo ha sido tu desempeño sexual últimamente?</div>
         <div class="options">
-          <label><input type="radio" name="desempeno" value="excelente"> Excelente</label>
-          <label><input type="radio" name="desempeno" value="normal"> Normal</label>
-          <label><input type="radio" name="desempeno" value="malo"> Malo</label>
-          <label><input type="radio" name="desempeno" value="muy_malo"> Muy malo</label>
+          <input type="radio" id="desempeno_excelente" name="desempeno" value="excelente">
+          <label for="desempeno_excelente">Excelente</label>
+          <input type="radio" id="desempeno_normal" name="desempeno" value="normal">
+          <label for="desempeno_normal">Normal</label>
+          <input type="radio" id="desempeno_malo" name="desempeno" value="malo">
+          <label for="desempeno_malo">Malo</label>
+          <input type="radio" id="desempeno_muy_malo" name="desempeno" value="muy_malo">
+          <label for="desempeno_muy_malo">Muy malo</label>
         </div>
         <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
@@ -118,10 +140,14 @@
       <div class="step">
         <div class="question">4. ¿Cuánto tiempo sueles durar durante el sexo?</div>
         <div class="options">
-          <label><input type="radio" name="tiempo" value="mas_10"> Más de 10 minutos</label>
-          <label><input type="radio" name="tiempo" value="5_10"> Entre 5 y 10 minutos</label>
-          <label><input type="radio" name="tiempo" value="2_5"> Entre 2 y 5 minutos</label>
-          <label><input type="radio" name="tiempo" value="menos_2"> Menos de 2 minutos</label>
+          <input type="radio" id="tiempo_10" name="tiempo" value="mas_10">
+          <label for="tiempo_10">Más de 10 minutos</label>
+          <input type="radio" id="tiempo_5_10" name="tiempo" value="5_10">
+          <label for="tiempo_5_10">Entre 5 y 10 minutos</label>
+          <input type="radio" id="tiempo_2_5" name="tiempo" value="2_5">
+          <label for="tiempo_2_5">Entre 2 y 5 minutos</label>
+          <input type="radio" id="tiempo_menos_2" name="tiempo" value="menos_2">
+          <label for="tiempo_menos_2">Menos de 2 minutos</label>
         </div>
         <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
@@ -130,8 +156,10 @@
       <div class="step">
         <div class="question">5. ¿Has notado una baja en tu deseo sexual (libido)?</div>
         <div class="options">
-          <label><input type="radio" name="libido" value="si"> Sí</label>
-          <label><input type="radio" name="libido" value="no"> No</label>
+          <input type="radio" id="libido_si" name="libido" value="si">
+          <label for="libido_si">Sí</label>
+          <input type="radio" id="libido_no" name="libido" value="no">
+          <label for="libido_no">No</label>
         </div>
         <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
@@ -140,8 +168,10 @@
       <div class="step">
         <div class="question">6. ¿Te sientes con menos energía durante el día?</div>
         <div class="options">
-          <label><input type="radio" name="energia" value="si"> Sí</label>
-          <label><input type="radio" name="energia" value="no"> No</label>
+          <input type="radio" id="energia_si" name="energia" value="si">
+          <label for="energia_si">Sí</label>
+          <input type="radio" id="energia_no" name="energia" value="no">
+          <label for="energia_no">No</label>
         </div>
         <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
@@ -150,8 +180,10 @@
       <div class="step">
         <div class="question">7. ¿Tu erección no es lo suficientemente firme?</div>
         <div class="options">
-          <label><input type="radio" name="ereccion" value="si"> Sí</label>
-          <label><input type="radio" name="ereccion" value="no"> No</label>
+          <input type="radio" id="ereccion_si" name="ereccion" value="si">
+          <label for="ereccion_si">Sí</label>
+          <input type="radio" id="ereccion_no" name="ereccion" value="no">
+          <label for="ereccion_no">No</label>
         </div>
         <button type="button" onclick="calcularResultado()">Ver resultado</button>
       </div>
