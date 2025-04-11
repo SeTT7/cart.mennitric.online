@@ -2,111 +2,191 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Autoevaluación Masculina</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
     }
     .quiz-container {
-      max-width: 600px;
-      background: white;
+      max-width: 500px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 16px;
       padding: 30px;
-      border-radius: 10px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .step {
+      display: none;
+      animation: fade 0.5s ease-in-out;
+    }
+    .step.active {
+      display: block;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      color: #333;
     }
     .question {
-      margin-bottom: 20px;
+      font-size: 18px;
+      margin: 20px 0 10px;
     }
-    .question label {
+    .options label {
       display: block;
-      margin-top: 5px;
+      margin: 12px 0;
+      background: #f7f7f7;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .submit-btn {
+    .options input {
+      display: none;
+    }
+    .options label:hover {
+      background: #e0e0e0;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
       background-color: #007bff;
       color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
       font-size: 16px;
-      width: 100%;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .submit-btn:hover {
+    button:hover {
       background-color: #0056b3;
     }
     #result {
-      margin-top: 20px;
-      font-weight: bold;
       text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
   <div class="quiz-container">
-    <h2>¿Cómo va tu desempeño?</h2>
     <form id="quizForm">
       
-      <div class="question">
-        <label>1. ¿Cuántos años tienes?</label>
-        <input type="number" name="edad" min="18" required>
+      <!-- Passo 1 -->
+      <div class="step active">
+        <h2>Autoevaluación Masculina</h2>
+        <div class="question">1. ¿Cuántos años tienes?</div>
+        <input type="number" name="edad" required min="18">
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>2. ¿Estás en una relación o matrimonio?</label>
-        <label><input type="radio" name="relacion" value="si" required> Sí</label>
-        <label><input type="radio" name="relacion" value="no"> No</label>
+      <!-- Passo 2 -->
+      <div class="step">
+        <div class="question">2. ¿Estás en una relación?</div>
+        <div class="options">
+          <label><input type="radio" name="relacion" value="si"> Sí</label>
+          <label><input type="radio" name="relacion" value="no"> No</label>
+        </div>
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>3. ¿Cómo ha sido tu desempeño sexual últimamente?</label>
-        <label><input type="radio" name="desempeno" value="excelente" required> Excelente</label>
-        <label><input type="radio" name="desempeno" value="normal"> Normal</label>
-        <label><input type="radio" name="desempeno" value="malo"> Malo</label>
-        <label><input type="radio" name="desempeno" value="muy_malo"> Muy malo</label>
+      <!-- Passo 3 -->
+      <div class="step">
+        <div class="question">3. ¿Cómo ha sido tu desempeño sexual últimamente?</div>
+        <div class="options">
+          <label><input type="radio" name="desempeno" value="excelente"> Excelente</label>
+          <label><input type="radio" name="desempeno" value="normal"> Normal</label>
+          <label><input type="radio" name="desempeno" value="malo"> Malo</label>
+          <label><input type="radio" name="desempeno" value="muy_malo"> Muy malo</label>
+        </div>
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>4. ¿Cuánto tiempo sueles durar durante el sexo?</label>
-        <label><input type="radio" name="tiempo" value="mas_10" required> Más de 10 minutos</label>
-        <label><input type="radio" name="tiempo" value="5_10"> Entre 5 y 10 minutos</label>
-        <label><input type="radio" name="tiempo" value="2_5"> Entre 2 y 5 minutos</label>
-        <label><input type="radio" name="tiempo" value="menos_2"> Menos de 2 minutos</label>
+      <!-- Passo 4 -->
+      <div class="step">
+        <div class="question">4. ¿Cuánto tiempo sueles durar durante el sexo?</div>
+        <div class="options">
+          <label><input type="radio" name="tiempo" value="mas_10"> Más de 10 minutos</label>
+          <label><input type="radio" name="tiempo" value="5_10"> Entre 5 y 10 minutos</label>
+          <label><input type="radio" name="tiempo" value="2_5"> Entre 2 y 5 minutos</label>
+          <label><input type="radio" name="tiempo" value="menos_2"> Menos de 2 minutos</label>
+        </div>
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>5. ¿Sientes que tu deseo sexual (libido) ha disminuido?</label>
-        <label><input type="radio" name="libido" value="si" required> Sí</label>
-        <label><input type="radio" name="libido" value="no"> No</label>
+      <!-- Passo 5 -->
+      <div class="step">
+        <div class="question">5. ¿Has notado una baja en tu deseo sexual (libido)?</div>
+        <div class="options">
+          <label><input type="radio" name="libido" value="si"> Sí</label>
+          <label><input type="radio" name="libido" value="no"> No</label>
+        </div>
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>6. ¿Te sientes con menos energía durante el día?</label>
-        <label><input type="radio" name="energia" value="si" required> Sí</label>
-        <label><input type="radio" name="energia" value="no"> No</label>
+      <!-- Passo 6 -->
+      <div class="step">
+        <div class="question">6. ¿Te sientes con menos energía durante el día?</div>
+        <div class="options">
+          <label><input type="radio" name="energia" value="si"> Sí</label>
+          <label><input type="radio" name="energia" value="no"> No</label>
+        </div>
+        <button type="button" onclick="nextStep()">Siguiente</button>
       </div>
 
-      <div class="question">
-        <label>7. ¿Tu pene no está quedando lo suficientemente firme durante el sexo?</label>
-        <label><input type="radio" name="ereccion" value="si" required> Sí</label>
-        <label><input type="radio" name="ereccion" value="no"> No</label>
+      <!-- Passo 7 -->
+      <div class="step">
+        <div class="question">7. ¿Tu erección no es lo suficientemente firme?</div>
+        <div class="options">
+          <label><input type="radio" name="ereccion" value="si"> Sí</label>
+          <label><input type="radio" name="ereccion" value="no"> No</label>
+        </div>
+        <button type="button" onclick="calcularResultado()">Ver resultado</button>
       </div>
 
-      <button type="button" class="submit-btn" onclick="evaluar()">Ver resultado</button>
     </form>
-
     <div id="result"></div>
   </div>
 
   <script>
-    function evaluar() {
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.step');
+
+    function nextStep() {
+      const current = steps[currentStep];
+      const inputs = current.querySelectorAll('input');
+      let valid = false;
+
+      inputs.forEach(input => {
+        if ((input.type === 'radio' && input.checked) || input.type === 'number') {
+          if (input.type === 'number' && input.value === '') return;
+          valid = true;
+        }
+      });
+
+      if (!valid) {
+        alert('Por favor, responde esta pregunta antes de continuar.');
+        return;
+      }
+
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      steps[currentStep].classList.add('active');
+    }
+
+    function calcularResultado() {
       const form = document.getElementById("quizForm");
       const edad = parseInt(form.edad.value);
       const desempeno = form.desempeno.value;
@@ -116,7 +196,6 @@
       const ereccion = form.ereccion.value;
 
       let score = 0;
-
       if (edad > 40) score++;
       if (desempeno === "malo" || desempeno === "muy_malo") score++;
       if (tiempo === "menos_2" || tiempo === "2_5") score++;
@@ -124,14 +203,17 @@
       if (energia === "si") score++;
       if (ereccion === "si") score++;
 
-      const resultado = document.getElementById("result");
+      let mensagem = '';
       if (score >= 4) {
-        resultado.innerHTML = "⚠️ Señales claras de disfunción eréctil. Sería recomendable buscar ayuda especializada.";
+        mensagem = "⚠️ Hay señales claras de disfunción eréctil. Te recomendamos buscar ayuda profesional.";
       } else if (score >= 2) {
-        resultado.innerHTML = "🟡 Algunos signos de advertencia. Podría valer la pena investigar un poco más.";
+        mensagem = "🟡 Podrías estar teniendo algunos signos. Vale la pena investigar más a fondo.";
       } else {
-        resultado.innerHTML = "🟢 Todo parece estar bien. ¡Sigue cuidando tu salud!";
+        mensagem = "🟢 Todo parece estar en orden. ¡Sigue cuidando tu salud!";
       }
+
+      steps[currentStep].classList.remove('active');
+      document.getElementById('result').innerText = mensagem;
     }
   </script>
 
