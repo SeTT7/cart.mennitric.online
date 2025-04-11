@@ -1,253 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Autoevaluación Masculina</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Disfunción Eréctil</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Arial', sans-serif;
       background-color: #000;
       color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    .quiz-container {
+      font-family: Arial, sans-serif;
+      padding: 20px;
       max-width: 500px;
-      margin: 60px auto;
-      background: #111;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      margin: auto;
     }
-    .step {
+
+    .quiz-step {
       display: none;
-      animation: fade 0.5s ease-in-out;
+      flex-direction: column;
     }
-    .step.active {
-      display: block;
+
+    .quiz-step.active {
+      display: flex;
     }
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+
     h2 {
-      text-align: center;
-      color: #e50914;
+      color: #ff3c3c;
     }
-    .question {
-      font-size: 18px;
-      margin: 20px 0 10px;
-      color: #fff;
-    }
-    .options label {
-      display: block;
-      margin: 12px 0;
-      background: #222;
-      padding: 14px;
-      border-radius: 10px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: background 0.3s, border 0.3s;
-      color: #fff;
-    }
-    .options input {
-      display: none;
-    }
-    .options input:checked + label {
-      background: #1a1a1a;
-      border: 2px solid #e50914;
-      color: #e50914;
-    }
-    button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background-color: #e50914;
+
+    button.option {
+      background-color: #111;
+      border: 2px solid #ff3c3c;
       color: white;
+      padding: 15px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+    }
+
+    button.option:hover,
+    button.option.selected {
+      background-color: #ff3c3c;
+      color: #000;
+    }
+
+    #result {
+      display: none;
+      background-color: #111;
+      border: 2px solid #ff3c3c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    #checkout-btn {
+      background-color: #ff3c3c;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background-color: #b00610;
-    }
-    #result {
-      text-align: center;
-      font-weight: bold;
       margin-top: 20px;
-      font-size: 18px;
-      color: #e50914;
+      transition: background-color 0.3s ease;
     }
-    input[type="number"] {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #444;
-      background: #1a1a1a;
-      color: #fff;
+
+    #checkout-btn:hover {
+      background-color: #ff1a1a;
     }
   </style>
 </head>
 <body>
 
-  <div class="quiz-container">
-    <form id="quizForm">
-      
-      <!-- Passo 1 -->
-      <div class="step active">
-        <h2>Autoevaluación Masculina</h2>
-        <div class="question">1. ¿Cuántos años tienes?</div>
-        <input type="number" name="edad" required min="18">
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <h2>Responde con sinceridad:</h2>
 
-      <!-- Passo 2 -->
-      <div class="step">
-        <div class="question">2. ¿Estás en una relación?</div>
-        <div class="options">
-          <input type="radio" id="relacion_si" name="relacion" value="si">
-          <label for="relacion_si">Sí</label>
-          <input type="radio" id="relacion_no" name="relacion" value="no">
-          <label for="relacion_no">No</label>
-        </div>
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <div class="quiz-step active" id="step1">
+    <p>¿Cuántos años tienes?</p>
+    <button class="option" onclick="nextStep()">Menos de 30</button>
+    <button class="option" onclick="nextStep()">30 a 50</button>
+    <button class="option" onclick="nextStep()">Más de 50</button>
+  </div>
 
-      <!-- Passo 3 -->
-      <div class="step">
-        <div class="question">3. ¿Cómo ha sido tu desempeño sexual últimamente?</div>
-        <div class="options">
-          <input type="radio" id="desempeno_excelente" name="desempeno" value="excelente">
-          <label for="desempeno_excelente">Excelente</label>
-          <input type="radio" id="desempeno_normal" name="desempeno" value="normal">
-          <label for="desempeno_normal">Normal</label>
-          <input type="radio" id="desempeno_malo" name="desempeno" value="malo">
-          <label for="desempeno_malo">Malo</label>
-          <input type="radio" id="desempeno_muy_malo" name="desempeno" value="muy_malo">
-          <label for="desempeno_muy_malo">Muy malo</label>
-        </div>
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <div class="quiz-step" id="step2">
+    <p>¿Tienes pareja actualmente?</p>
+    <button class="option" onclick="nextStep()">Sí</button>
+    <button class="option" onclick="nextStep()">No</button>
+  </div>
 
-      <!-- Passo 4 -->
-      <div class="step">
-        <div class="question">4. ¿Cuánto tiempo sueles durar durante el sexo?</div>
-        <div class="options">
-          <input type="radio" id="tiempo_10" name="tiempo" value="mas_10">
-          <label for="tiempo_10">Más de 10 minutos</label>
-          <input type="radio" id="tiempo_5_10" name="tiempo" value="5_10">
-          <label for="tiempo_5_10">Entre 5 y 10 minutos</label>
-          <input type="radio" id="tiempo_2_5" name="tiempo" value="2_5">
-          <label for="tiempo_2_5">Entre 2 y 5 minutos</label>
-          <input type="radio" id="tiempo_menos_2" name="tiempo" value="menos_2">
-          <label for="tiempo_menos_2">Menos de 2 minutos</label>
-        </div>
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <div class="quiz-step" id="step3">
+    <p>¿Cómo ha sido tu desempeño en la cama últimamente?</p>
+    <button class="option" onclick="nextStep()">Ha empeorado</button>
+    <button class="option" onclick="nextStep()">Normal</button>
+    <button class="option" onclick="nextStep()">Muy bueno</button>
+  </div>
 
-      <!-- Passo 5 -->
-      <div class="step">
-        <div class="question">5. ¿Has notado una baja en tu deseo sexual (libido)?</div>
-        <div class="options">
-          <input type="radio" id="libido_si" name="libido" value="si">
-          <label for="libido_si">Sí</label>
-          <input type="radio" id="libido_no" name="libido" value="no">
-          <label for="libido_no">No</label>
-        </div>
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <div class="quiz-step" id="step4">
+    <p>¿Cuánto tiempo logras durar durante el sexo?</p>
+    <button class="option" onclick="nextStep()">Menos de 2 minutos</button>
+    <button class="option" onclick="nextStep()">2 a 10 minutos</button>
+    <button class="option" onclick="nextStep()">Más de 10 minutos</button>
+  </div>
 
-      <!-- Passo 6 -->
-      <div class="step">
-        <div class="question">6. ¿Te sientes con menos energía durante el día?</div>
-        <div class="options">
-          <input type="radio" id="energia_si" name="energia" value="si">
-          <label for="energia_si">Sí</label>
-          <input type="radio" id="energia_no" name="energia" value="no">
-          <label for="energia_no">No</label>
-        </div>
-        <button type="button" onclick="nextStep()">Siguiente</button>
-      </div>
+  <div class="quiz-step" id="step5">
+    <p>¿Sientes falta de deseo o energía?</p>
+    <button class="option" onclick="nextStep()">Sí</button>
+    <button class="option" onclick="nextStep()">A veces</button>
+    <button class="option" onclick="nextStep()">No</button>
+  </div>
 
-      <!-- Passo 7 -->
-      <div class="step">
-        <div class="question">7. ¿Tu erección no es lo suficientemente firme?</div>
-        <div class="options">
-          <input type="radio" id="ereccion_si" name="ereccion" value="si">
-          <label for="ereccion_si">Sí</label>
-          <input type="radio" id="ereccion_no" name="ereccion" value="no">
-          <label for="ereccion_no">No</label>
-        </div>
-        <button type="button" onclick="calcularResultado()">Ver resultado</button>
-      </div>
+  <div class="quiz-step" id="step6">
+    <p>¿Tu erección se mantiene firme durante todo el acto?</p>
+    <button class="option" onclick="showResult()">No</button>
+    <button class="option" onclick="showResult()">Se debilita</button>
+    <button class="option" onclick="showResult()">Sí</button>
+  </div>
 
-    </form>
-    <div id="result"></div>
+  <div id="result">
+    <h2>Resultado</h2>
+    <p>🔴 Según tus respuestas, estás enfrentando señales claras de disfunción eréctil.</p>
+
+    <p>
+      Pero no te preocupes, porque <strong>este protocolo 100% natural</strong> ha ayudado a miles de hombres a recuperar erecciones fuertes, deseo sexual y rendimiento explosivo... incluso después de años de frustración.
+    </p>
+
+    <p>
+      🍃 Sin medicamentos, sin efectos secundarios, y con resultados que muchos notan ya en la primera semana.
+    </p>
+
+    <p>
+      ✔️ Más firmeza, más duración, más placer.
+    </p>
+
+    <button id="checkout-btn" onclick="irParaCheckout()">Adquiere ahora</button>
   </div>
 
   <script>
-    let currentStep = 0;
-    const steps = document.querySelectorAll('.step');
+    let currentStep = 1;
 
     function nextStep() {
-      const current = steps[currentStep];
-      const inputs = current.querySelectorAll('input');
-      let valid = false;
-
-      inputs.forEach(input => {
-        if ((input.type === 'radio' && input.checked) || input.type === 'number') {
-          if (input.type === 'number' && input.value === '') return;
-          valid = true;
-        }
-      });
-
-      if (!valid) {
-        alert('Por favor, responde esta pregunta antes de continuar.');
-        return;
-      }
-
-      steps[currentStep].classList.remove('active');
+      document.getElementById("step" + currentStep).classList.remove("active");
       currentStep++;
-      steps[currentStep].classList.add('active');
+      document.getElementById("step" + currentStep).classList.add("active");
     }
 
-    function calcularResultado() {
-      const form = document.getElementById("quizForm");
-      const edad = parseInt(form.edad.value);
-      const desempeno = form.desempeno.value;
-      const tiempo = form.tiempo.value;
-      const libido = form.libido.value;
-      const energia = form.energia.value;
-      const ereccion = form.ereccion.value;
-
-      let score = 0;
-      if (edad > 40) score++;
-      if (desempeno === "malo" || desempeno === "muy_malo") score++;
-      if (tiempo === "menos_2" || tiempo === "2_5") score++;
-      if (libido === "si") score++;
-      if (energia === "si") score++;
-      if (ereccion === "si") score++;
-
-      let mensagem = '';
-      if (score >= 4) {
-        mensagem = "⚠️ Hay señales claras de disfunción eréctil. Te recomendamos buscar ayuda profesional.";
-      } else if (score >= 2) {
-        mensagem = "🟡 En tu caso, este protocolo va a ser perfecto para ti.";
-      } else {
-        mensagem = "🟢 Todo parece estar en orden. ¡Sigue cuidando tu salud!";
-      }
-
-      steps[currentStep].classList.remove('active');
-      document.getElementById('result').innerText = mensagem;
+    function showResult() {
+      document.getElementById("step" + currentStep).classList.remove("active");
+      document.getElementById("result").style.display = "block";
     }
+
+    function irParaCheckout() {
+      // 🔽 INSIRA O LINK DO CHECKOUT AQUI 🔽
+      window.location.href = "https://tusecreto.com/checkout"; // <--- Substitua esse link pelo seu
+    }
+
+    // Destaque visual da opção selecionada
+    const options = document.querySelectorAll("button.option");
+    options.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const siblings = btn.parentNode.querySelectorAll("button.option");
+        siblings.forEach(sib => sib.classList.remove("selected"));
+        btn.classList.add("selected");
+      });
+    });
   </script>
-
 </body>
 </html>
