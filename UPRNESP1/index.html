@@ -71,6 +71,29 @@
             justify-content: center;
             border: 1px solid #ddd;
         }
+        .imagem-container {
+    width: 100%;
+    max-width: 250px; /* Largura máxima controlada */
+    margin: 0 auto 20px; /* Centraliza e espaçamento */
+    padding: 10px;
+    border: 1px solid #eee; /* Opcional: borda sutil */
+    border-radius: 8px;
+    background: #fff; /* Fundo branco para contrastar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra leve */
+}
+        .imagem-container img {
+    width: 100%; /* Ocupa 100% do container */
+    height: auto; /* Mantém proporção */
+    display: block; /* Remove espaços indesejados */
+}
+        .nome-produto {
+    margin-top: 30px; /* Espaço acima do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+        .container-principal {
+    max-width: 100%; /* Garante que não ultrapasse a tela */
+    overflow-x: hidden; /* Esconde qualquer conteúdo horizontal extra */
+}
         
         .nome-produto {
             font-weight: 700;
@@ -244,27 +267,27 @@
         <p>¡Nos vemos en el otro lado!</p>
     </div>
     
-    <!-- Seção 3 - Botões -->
-    <div class="secao3">
-        <!-- Área para imagem do produto -->
-        <div class="imagem-produto">
+<!-- SEÇÃO 3 - PRODUTO (SUBSTITUA TODO O CONTEÚDO ATUAL POR ESTE) -->
+<div class="secao3">
+    <div class="container-produto">
+        <!-- IMAGEM (Centralizada e controlada) -->
+        <div class="imagem-container">
             <img src="img/bull.PNG">
         </div>
         
-        <!-- Nome do produto -->
-        <div class="nome-produto">
-            Potencia Máxima
-        </div>
+        <!-- TÍTULO (Abaixo da imagem) -->
+        <h2 class="nome-produto">Potencia Máxima</h2>
         
-        <!-- Preço do produto -->
-        <div class="preco-produto">
-            US$ 28.90
-        </div>
+        <!-- PREÇO -->
+        <div class="preco-produto">US$ 28.90</div>
         
-        <!-- Botões -->
-        <a href="" class="botao botao-aceitar">Añadir al pedido</a>
-        <a href="" class="botao botao-recusar">Perder la oportunidad</a>
+        <!-- BOTÕES -->
+        <div class="botoes-container">
+            <a href="LINK-DO-BOTÃO-VERDE" class="botao botao-aceitar">Añadir al pedido</a>
+            <a href="LINK-DO-BOTÃO-VERMELHO" class="botao botao-recusar">Perder la oportunidad</a>
+        </div>
     </div>
+</div>
     
     <!-- Seção 4 -->
     <div class="secao4">
