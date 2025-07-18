@@ -51,6 +51,24 @@
         .destaque {
             font-weight: 700;
         }
+        .preco-antigo {
+    color: #dc3545; /* Vermelho */
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.preco-antigo span {
+    text-decoration: line-through; /* Linha riscando */
+    opacity: 0.8;
+}
+
+.preco-produto {
+    color: #0066cc; /* Azul (mantenha seu estilo atual) */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
         
         /* Seção 3 - Botões */
         .secao3 {
@@ -279,6 +297,7 @@
         <h2 class="nome-produto">Potencia Máxima</h2>
         
         <!-- PREÇO -->
+        <div class="preco-antigo"> <span>US$ 53.90</span></div>
         <div class="preco-produto">US$ 28.90</div>
         
         <!-- BOTÕES -->
