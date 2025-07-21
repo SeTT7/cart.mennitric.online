@@ -13,20 +13,16 @@
       max-width: 500px;
       margin: auto;
     }
-
     .quiz-step {
       display: none;
       flex-direction: column;
     }
-
     .quiz-step.active {
       display: flex;
     }
-
     h2 {
       color: #ff3c3c;
     }
-
     button.option {
       background-color: #111;
       border: 2px solid #ff3c3c;
@@ -37,13 +33,11 @@
       transition: background-color 0.3s ease;
       border-radius: 8px;
     }
-
     button.option:hover,
     button.option.selected {
       background-color: #ff3c3c;
       color: #000;
     }
-
     #result {
       display: none;
       background-color: #111;
@@ -52,7 +46,6 @@
       border-radius: 10px;
       margin-top: 30px;
     }
-
     #checkout-btn {
       background-color: #ff3c3c;
       color: white;
@@ -64,7 +57,6 @@
       margin-top: 20px;
       transition: background-color 0.3s ease;
     }
-
     #checkout-btn:hover {
       background-color: #ff1a1a;
     }
@@ -118,29 +110,21 @@
   <div id="result">
     <h2>Résultat</h2>
     <p>🔴 Selon vos réponses, vous présentez des signes évidents de dysfonction érectile.</p>
-
-    <p>
-      Mais ne vous inquiétez pas, car <strong>ce protocole 100% naturel</strong> a aidé des milliers d’hommes à retrouver des érections puissantes, du désir sexuel et des performances explosives… même après des années de frustration.
-    </p>
-
-    <p>
-      🍃 Sans médicaments, sans effets secondaires, et avec des résultats visibles dès la première semaine pour beaucoup.
-    </p>
-
-    <p>
-      ✔️ Plus de fermeté, plus d’endurance, plus de plaisir.
-    </p>
-
+    <p>Mais ne vous inquiétez pas, car <strong>ce protocole 100% naturel</strong> a aidé des milliers d’hommes à retrouver des érections puissantes, du désir sexuel et des performances explosives… même après des années de frustration.</p>
+    <p>🍃 Sans médicaments, sans effets secondaires, et avec des résultats visibles dès la première semaine pour beaucoup.</p>
+    <p>✔️ Plus de fermeté, plus d’endurance, plus de plaisir.</p>
     <button id="checkout-btn" onclick="irParaCheckout()">Obtenez-le maintenant</button>
   </div>
 
   <script>
     let currentStep = 1;
-
     function nextStep() {
       document.getElementById("step" + currentStep).classList.remove("active");
       currentStep++;
-      document.getElementById("step" + currentStep).classList.add("active");
+      const next = document.getElementById("step" + currentStep);
+      if (next) {
+        next.classList.add("active");
+      }
     }
 
     function showResult() {
@@ -149,11 +133,10 @@
     }
 
     function irParaCheckout() {
-      // 🔽 INSÉREZ LE LIEN DU CHECKOUT ICI 🔽
-      window.location.href = "https://go.perfectpay.com.br/PPU38CPRT6C"; // <--- Remplacez ce lien par le vôtre
+      window.location.href = "https://go.perfectpay.com.br/PPU38CPRT6C";
     }
 
-    // Mise en surbrillance du bouton sélectionné
+    // Seleção visual
     const options = document.querySelectorAll("button.option");
     options.forEach(btn => {
       btn.addEventListener("click", () => {
