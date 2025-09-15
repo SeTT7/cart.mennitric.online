@@ -1,207 +1,284 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://lp1.satinmood.online">
-    <meta property="og:title" content="Angel Journey">
-    <meta property="og:description" content="Angel Journey">
-    <meta property="og:image" content="https://img.imageboss.me/atm/cdn/format:auto/u/umsGbYu2QNOfeAn5fEqSwCDI4VE3/l/rBhIAv7621085.png">
-    <title>Discover</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap" rel="stylesheet">
- <style>
-
-        
-*{
-
-font-family: 'adobe-garamond-pro';
-
-
-}
-
-.coluna{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:15px;
-    max-width: 100%;
-}
-.coluna img{
-    max-width:100%;
-}
-p,b,a{
-    font-family: "Inter"
-}
-
-
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-        }
-        body{
-            background-image: url("https://lp1.satinmood.online/ang2tik/images/fundo.png");
-            background-attachment: fixed;
-        }
-
-        a{
-            font-weight: bold;
-    display: inline-block;
-}
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: black;
-            font-weight: bold;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #333;
-            font-size: 0.8em;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        .angels {
+    <title>Ativar Pixel TikTok</title>
+    <style>
+        body {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        .angel-card {
-            height: 350px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .angel-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .cta-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-
-            /* Rectangle 3 */
-
-
-background: linear-gradient(180deg, #2BAC22 0%, #279A1F 100%);
-border: 2px solid #37D12C;
-border-radius: 14px;
-
-
-
-        }
-        .cta-button:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background-color: #3c2415;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer p {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-        @media (max-width:900px) {
-            h1 {
-                font-size: 2em;
-            }
-            .angel-card {
-                width: 100%;
-                height: auto;
-                margin-bottom:0px;
-            }
-        }
-
-        .centro{
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            width:100%;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        .linha{
-
-width: 684px;
-height: 10px;
-left: calc(50% - 684px/2);
-top: 924px;
-
-background: #E5EAEF;
-border-radius: 20px 20px 0px 0px;
-transform: translateY(6px) matrix(1, 0, 0, -1, 0, 0);
-max-width: 60%;
+        
+        .container {
+            text-align: center;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        a{
-            text-decoration: none;
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 242, 234, 0.5);
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        #pixelCode {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+            border: 2px solid #444;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+        
+        #pixelCode:focus {
+            outline: none;
+            border-color: #00f2ea;
+            box-shadow: 0 0 10px rgba(0, 242, 234, 0.5);
+        }
+        
+        .instructions {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 5px;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            color: #fff;
+        }
+        
+        .add-to-cart {
+            background: linear-gradient(45deg, #00f2ea, #ff0050);
+            color: #fff;
+        }
+        
+        .initiate-checkout {
+            background: linear-gradient(45deg, #ff0050, #7c00ff);
+            color: #fff;
+        }
+        
+        .add-payment-info {
+            background: linear-gradient(45deg, #00f2ea, #7c00ff);
+            color: #fff;
+        }
+        
+        .complete-payment {
+            background: linear-gradient(45deg, #ff0050, #00f2ea, #7c00ff);
+            color: #fff;
+        }
+        
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        .event-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(42, 42, 42, 0.8);
+            font-size: 14px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Find Out Who Your Guardian Angel Is and Access Your Angel’s Miraculous Chant</h1>
-
-
-        <div class="angels">
-            <div class="angel-card">
-                <img src="https://lp1.satinmood.online/ang2tik/images/2capa.png" alt="Archangel Michael">
-            </div>
-
+        <div class="logo">TT</div>
+        <h2>Ativar Pixel do TikTok</h2>
+        
+        <div class="input-group">
+            <input type="text" id="pixelCode" placeholder="Insira o ID do seu Pixel">
+            <div class="instructions">Encontre este ID no seu TikTok Events Manager</div>
         </div>
-
-        <p style="font-size:20px;max-width: 650px; font-family: 'adobe-garamond-pro'; line-height:1;">You have a guardian angel ready to bring you the <b>financial miracle</b> you need.</p>
-        <p style="font-size:20px;max-width: 650px; font-family: 'adobe-garamond-pro'; line-height:1;">But first, you need to know who he is to access the chant that will connect you both and unleash prosperity, miracles, and surprises…        </p>
-        <p style="font-size:20px;max-width: 650px; font-family: 'adobe-garamond-pro'; line-height:1;">...that your angel will bring to you over <b>the next 7 days!</b></p>
         
+        <button class="btn btn-primary" onclick="iniciarPixel()">Ativar Pixel</button>
         
-
+        <div class="event-status" id="statusMessage"></div>
         
+        <button class="btn add-to-cart" onclick="dispararAddToCart()">Add to Cart</button>
+        <button class="btn initiate-checkout" onclick="dispararInitiateCheckout()">Initiate Checkout</button>
+        <button class="btn add-payment-info" onclick="dispararAddPaymentInfo()">Add Payment Info</button>
+        <button class="btn complete-payment" onclick="dispararCompletePayment()">Complete Payment</button>
+        <button class="btn" onclick="enviarTodosEventosPadroes()">Enviar Todos Eventos</button>
         
-
-        <p> <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.6666 12.6667C11.049 12.6667 11.4312 12.5227 11.7227 12.2352L20.8956 3.18338C21.4791 2.60757 21.4791 1.674 20.8956 1.09843C20.3123 0.522855 19.3665 0.522855 18.7829 1.09843L10.6666 9.10797L2.5503 1.09871C1.96678 0.523134 1.021 0.523134 0.437767 1.09871C-0.14603 1.67428 -0.14603 2.60785 0.437767 3.18366L9.6105 12.2355C9.90214 12.523 10.2844 12.6667 10.6666 12.6667Z" fill="#272727"></path>
-            </svg>
-            CLICK BELOW TO DISCOVER WHO YOUR GUARDIAN ANGEL IS</p>
-        <a class="cta-button" href="https://lp1.satinmood.online/ang2tik/question1.html" id="ctaButton">I WANT TO KNOW WHO MY GUARDIAN ANGEL IS</a>
-        <br><br><br>
-
-        <div class="coluna">
-        <img src="https://lp1.satinmood.online/ang2tik/images/2_post.png">
-        <img src="https://lp1.satinmood.online/ang2tik/images/2_post2.png">
+        <div class="footer">
+            Esta ferramenta é apenas para testes. Os eventos são enviados diretamente para o TikTok.
+        </div>
     </div>
 
-    </div>
-    <div class="centro"><div class="linha"></div></div>
+    <script>
+        function showStatus(message, isError = false) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.style.display = 'block';
+            statusEl.style.background = isError ? 'rgba(255, 50, 50, 0.2)' : 'rgba(50, 255, 50, 0.2)';
+            
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 5000);
+        }
 
-    <footer>
-        <a>Privacy Policy</a>
-        <a>Terms of Use</a>
-        <p>This site is not affiliated with Facebook or any Facebook entity. Once you leave Facebook, the responsibility is no longer theirs but ours. We make every effort to clearly indicate and display all product evidence and use real results.</p>
-    </footer>
+        function iniciarPixel() {
+            const pixelCode = document.getElementById('pixelCode').value.trim();
+            if (pixelCode) {
+                !function (w, d, t) {
+                    w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || [];
+                    ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"],
+                    ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
+                    for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+                    ttq.instance = function (t) {
+                        for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
+                        return e
+                    }, ttq.load = function (e, n) {
+                        var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner;
+                        ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
+                        n = document.createElement("script"), n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t;
+                        e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e)
+                    };
+                    ttq.load(pixelCode);
+                    ttq.page();
+                }(window, document, 'ttq');
+                
+                showStatus("Pixel ativado com sucesso! Agora você pode testar os eventos.");
+            } else {
+                showStatus("Por favor, insira o código do Pixel.", true);
+            }
+        }
 
-</body></html>
+        function dispararAddToCart() {
+            if (window.ttq) {
+                ttq.track('AddToCart');
+                showStatus("Evento 'Add to Cart' disparado!");
+            } else {
+                showStatus("Por favor, ative o Pixel primeiro.", true);
+            }
+        }
+
+        function dispararInitiateCheckout() {
+            if (window.ttq) {
+                ttq.track('InitiateCheckout');
+                showStatus("Evento 'Initiate Checkout' disparado!");
+            } else {
+                showStatus("Por favor, ative o Pixel primeiro.", true);
+            }
+        }
+
+        function dispararAddPaymentInfo() {
+            if (window.ttq) {
+                ttq.track('AddPaymentInfo');
+                showStatus("Evento 'Add Payment Info' disparado!");
+            } else {
+                showStatus("Por favor, ative o Pixel primeiro.", true);
+            }
+        }
+
+        function dispararCompletePayment() {
+            if (window.ttq) {
+                const valorAleatorio = (Math.random() * 100 + 1).toFixed(2);
+                ttq.track('CompletePayment', { 
+                    quantity: 1, 
+                    description: "activate", 
+                    content_type: "product", 
+                    content_name: "ActivatePixel", 
+                    currency: "BRL", 
+                    value: valorAleatorio 
+                });
+                showStatus(`Evento 'Complete Payment' disparado com valor de R$${valorAleatorio}`);
+            } else {
+                showStatus("Por favor, ative o Pixel primeiro.", true);
+            }
+        }
+
+        function enviarTodosEventosPadroes() {
+            if (window.ttq) {
+                const events = [
+                    { name: 'AddToCart', params: {} },
+                    { name: 'InitiateCheckout', params: {} },
+                    { name: 'AddPaymentInfo', params: {} },
+                    { name: 'CompletePayment', params: { quantity: 1, description: "activate", content_type: "product", content_name: "ActivatePixel", currency: "BRL", value: (Math.random() * 100 + 1).toFixed(2) }},
+                    { name: 'ViewContent', params: { currency: 'BRL', value: 49.99 } }
+                ];
+
+                let index = 0;
+                showStatus("Disparando eventos... Aguarde.");
+
+                const triggerNextEvent = () => {
+                    if (index < events.length) {
+                        const event = events[index];
+                        ttq.track(event.name, event.params);
+                        index++;
+                        setTimeout(triggerNextEvent, 800);
+                    } else {
+                        showStatus("Todos os eventos foram enviados com sucesso!");
+                    }
+                };
+
+                triggerNextEvent();
+            } else {
+                showStatus("Pixel não ativado. Por favor, ative o pixel antes de enviar os eventos.", true);
+            }
+        }
+    </script>
+</body>
+</html>
