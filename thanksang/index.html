@@ -4,183 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ativar Pixel TikTok</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        
-        .container {
-            text-align: center;
-            background: rgba(26, 26, 26, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(45deg, #ff0050, #00f2ea);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-        }
-        
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #ffffff;
-            text-shadow: 0 0 10px rgba(0, 242, 234, 0.5);
-        }
-        
-        .input-group {
-            margin-bottom: 20px;
-        }
-        
-        #pixelCode {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 5px;
-            border: 2px solid #444;
-            border-radius: 8px;
-            text-align: center;
-            background-color: #2a2a2a;
-            color: #fff;
-            font-size: 16px;
-            box-sizing: border-box;
-            transition: all 0.3s;
-        }
-        
-        #pixelCode:focus {
-            outline: none;
-            border-color: #00f2ea;
-            box-shadow: 0 0 10px rgba(0, 242, 234, 0.5);
-        }
-        
-        .instructions {
-            font-size: 12px;
-            color: #aaa;
-            margin-top: 5px;
-        }
-        
-        .btn {
-            width: 100%;
-            padding: 14px;
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-        
-        .btn:active {
-            transform: translateY(0);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, #ff0050, #00f2ea);
-            color: #fff;
-        }
-        
-        .add-to-cart {
-            background: linear-gradient(45deg, #00f2ea, #ff0050);
-            color: #fff;
-        }
-        
-        .initiate-checkout {
-            background: linear-gradient(45deg, #ff0050, #7c00ff);
-            color: #fff;
-        }
-        
-        .add-payment-info {
-            background: linear-gradient(45deg, #00f2ea, #7c00ff);
-            color: #fff;
-        }
-        
-        .complete-payment {
-            background: linear-gradient(45deg, #ff0050, #00f2ea, #7c00ff);
-            color: #fff;
-        }
-        
-        .footer {
-            margin-top: 25px;
-            font-size: 12px;
-            color: #888;
-        }
-        
-        .event-status {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            background: rgba(42, 42, 42, 0.8);
-            font-size: 14px;
-            display: none;
-        }
-    </style>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #0d0d0d;
+        color: white;
+    }
+    .container {
+        text-align: center;
+        background: #1a1a1a;
+        padding: 20px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 0, 128, 0.2), 0 0 20px rgba(0, 255, 255, 0.2);
+        width: 320px;
+    }
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+    #pixelCode {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        text-align: center;
+        background-color: #2a2a2a;
+        color: #fff;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .add-to-cart {
+        background: linear-gradient(45deg, #ff0050, #00f2ea);
+        color: #fff;
+    }
+    .initiate-checkout {
+        background: linear-gradient(45deg, #00f2ea, #ff0050);
+        color: #fff;
+    }
+    .add-payment-info {
+        background: linear-gradient(45deg, #ff0050, #7c00ff);
+        color: #fff;
+    }
+    .complete-payment {
+        background: linear-gradient(45deg, #00f2ea, #7c00ff);
+        color: #fff;
+    }
+    .all-events {
+        background: linear-gradient(45deg, #ff0050, #00f2ea, #7c00ff);
+        color: #fff;
+    }
+    button:hover {
+        opacity: 0.9;
+    }
+</style>
+
 </head>
 <body>
+    
     <div class="container">
-        <div class="logo">TT</div>
         <h2>Ativar Pixel do TikTok</h2>
-        
-        <div class="input-group">
-            <input type="text" id="pixelCode" placeholder="Insira o ID do seu Pixel">
-            <div class="instructions">Encontre este ID no seu TikTok Events Manager</div>
-        </div>
-        
-        <button class="btn btn-primary" onclick="iniciarPixel()">Ativar Pixel</button>
-        
-        <div class="event-status" id="statusMessage"></div>
-        
-        <button class="btn add-to-cart" onclick="dispararAddToCart()">Add to Cart</button>
-        <button class="btn initiate-checkout" onclick="dispararInitiateCheckout()">Initiate Checkout</button>
-        <button class="btn add-payment-info" onclick="dispararAddPaymentInfo()">Add Payment Info</button>
-        <button class="btn complete-payment" onclick="dispararCompletePayment()">Complete Payment</button>
-        <button class="btn" onclick="enviarTodosEventosPadroes()">Enviar Todos Eventos</button>
-        
-        <div class="footer">
-            Esta ferramenta é apenas para testes. Os eventos são enviados diretamente para o TikTok.
-        </div>
+        <input type="text" id="pixelCode" placeholder="Insira o código do Pixel">
+        <button onclick="iniciarPixel()">Ativar Pixel</button>
+        <button class="add-to-cart" onclick="dispararAddToCart()">Add to Cart</button>
+        <button class="initiate-checkout" onclick="dispararInitiateCheckout()">Initiate Checkout</button>
+        <button class="add-payment-info" onclick="dispararAddPaymentInfo()">Add Payment Info</button>
+        <button class="complete-payment" onclick="dispararCompletePayment()">Complete Payment</button>
+        <button class="all-events" onclick="enviarTodosEventosPadroes()">Enviar Todos Eventos Padrões</button>
     </div>
 
     <script>
-        function showStatus(message, isError = false) {
-            const statusEl = document.getElementById('statusMessage');
-            statusEl.textContent = message;
-            statusEl.style.display = 'block';
-            statusEl.style.background = isError ? 'rgba(255, 50, 50, 0.2)' : 'rgba(50, 255, 50, 0.2)';
-            
-            setTimeout(() => {
-                statusEl.style.display = 'none';
-            }, 5000);
-        }
-
         function iniciarPixel() {
-            const pixelCode = document.getElementById('pixelCode').value.trim();
+            const pixelCode = document.getElementById('pixelCode').value;
             if (pixelCode) {
                 !function (w, d, t) {
                     w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || [];
@@ -199,54 +110,46 @@
                     ttq.load(pixelCode);
                     ttq.page();
                 }(window, document, 'ttq');
-                
-                showStatus("Pixel ativado com sucesso! Agora você pode testar os eventos.");
+                alert("Pixel ativado com sucesso!");
             } else {
-                showStatus("Por favor, insira o código do Pixel.", true);
+                alert("Por favor, insira o código do Pixel.");
             }
         }
 
         function dispararAddToCart() {
             if (window.ttq) {
                 ttq.track('AddToCart');
-                showStatus("Evento 'Add to Cart' disparado!");
+                alert("Evento 'Add to Cart' disparado!");
             } else {
-                showStatus("Por favor, ative o Pixel primeiro.", true);
+                alert("Por favor, ative o Pixel primeiro.");
             }
         }
 
         function dispararInitiateCheckout() {
             if (window.ttq) {
                 ttq.track('InitiateCheckout');
-                showStatus("Evento 'Initiate Checkout' disparado!");
+                alert("Evento 'Initiate Checkout' disparado!");
             } else {
-                showStatus("Por favor, ative o Pixel primeiro.", true);
+                alert("Por favor, ative o Pixel primeiro.");
             }
         }
 
         function dispararAddPaymentInfo() {
             if (window.ttq) {
                 ttq.track('AddPaymentInfo');
-                showStatus("Evento 'Add Payment Info' disparado!");
+                alert("Evento 'Add Payment Info' disparado!");
             } else {
-                showStatus("Por favor, ative o Pixel primeiro.", true);
+                alert("Por favor, ative o Pixel primeiro.");
             }
         }
 
         function dispararCompletePayment() {
             if (window.ttq) {
                 const valorAleatorio = (Math.random() * 100 + 1).toFixed(2);
-                ttq.track('CompletePayment', { 
-                    quantity: 1, 
-                    description: "activate", 
-                    content_type: "product", 
-                    content_name: "ActivatePixel", 
-                    currency: "BRL", 
-                    value: valorAleatorio 
-                });
-                showStatus(`Evento 'Complete Payment' disparado com valor de R$${valorAleatorio}`);
+                ttq.track('CompletePayment', { quantity: 1, description: "activate", content_type: "product", content_name: "ActivatePixel", currency: "USD", value: valorAleatorio });
+                alert(`Evento 'Complete Payment' disparado com valor de R$${valorAleatorio}`);
             } else {
-                showStatus("Por favor, ative o Pixel primeiro.", true);
+                alert("Por favor, ative o Pixel primeiro.");
             }
         }
 
@@ -256,29 +159,40 @@
                     { name: 'AddToCart', params: {} },
                     { name: 'InitiateCheckout', params: {} },
                     { name: 'AddPaymentInfo', params: {} },
-                    { name: 'CompletePayment', params: { quantity: 1, description: "activate", content_type: "product", content_name: "ActivatePixel", currency: "BRL", value: (Math.random() * 100 + 1).toFixed(2) }},
-                    { name: 'ViewContent', params: { currency: 'BRL', value: 49.99 } }
+                    { name: 'CompletePayment', params: { quantity: 1, description: "activate", content_type: "product", content_name: "ActivatePixel", currency: "USD", value: (Math.random() * 100 + 1).toFixed(2) }},
+                    { name: 'CompleteRegistration', params: {} },
+                    { name: 'Contact', params: {} },
+                    { name: 'CustomizeProduct', params: {} },
+                    { name: 'Download', params: {} },
+                    { name: 'FindLocation', params: {} },
+                    { name: 'PlaceAnOrder', params: { currency: 'USD', value: 75.00 } },
+                    { name: 'Schedule', params: {} },
+                    { name: 'Search', params: { query: 'exemplo de pesquisa' } },
+                    { name: 'SubmitForm', params: {} },
+                    { name: 'Subscribe', params: {} },
+                    { name: 'ViewContent', params: { currency: 'USD', value: 49.99 } }
                 ];
 
                 let index = 0;
-                showStatus("Disparando eventos... Aguarde.");
+                alert("Aguarde 15 segundos! ");
 
                 const triggerNextEvent = () => {
                     if (index < events.length) {
                         const event = events[index];
                         ttq.track(event.name, event.params);
                         index++;
-                        setTimeout(triggerNextEvent, 800);
+                        setTimeout(triggerNextEvent, 1000);
                     } else {
-                        showStatus("Todos os eventos foram enviados com sucesso!");
+                        alert("Todos os eventos padrão foram enviados com sucesso!");
                     }
                 };
 
                 triggerNextEvent();
             } else {
-                showStatus("Pixel não ativado. Por favor, ative o pixel antes de enviar os eventos.", true);
+                alert("Pixel não ativado. Por favor, ative o pixel antes de enviar os eventos.");
             }
         }
     </script>
+
 </body>
 </html>
